@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Ball.cs" />
+    <Compile Include="Data\GlobalConfig.cs" />
     <Compile Include="Mod\BallMachine.cs" />
+    <Compile Include="Mod\MathTools.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

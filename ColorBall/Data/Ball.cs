@@ -1,12 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ColorBall.Data
 {
+    // 双色球颜色
+    public enum BallColor:int
+    {
+        RED = 1,
+        BLUE = 2
+    }
+
+
     internal class Ball
     {
+        private BallColor color;
+        private int number;
+        public Ball(int number, BallColor color)
+        {
+            this.Color = color;
+            this.Number = number;
+        }
+        public int Number
+        {
+            get { return number; }
+            set { number = value; }
+        }
+
+        public BallColor Color
+        {
+            get {return color; }
+            set {color = value; }
+        }
     }
 }
