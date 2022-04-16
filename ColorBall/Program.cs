@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ColorBall.Mod;
 
 namespace ColorBall
@@ -13,18 +9,40 @@ namespace ColorBall
         {
             BallMachine machine = new BallMachine();
             machine.InitBalls();
-            Console.WriteLine("Before shuffle!");
-            machine.DebugPrint(Data.BallColor.BLUE);
-            Console.WriteLine();
-            machine.DebugPrint(Data.BallColor.RED);
-            Console.WriteLine();
-            machine.Shuffle();
-            Console.WriteLine("After shuffle!");
-            machine.DebugPrint(Data.BallColor.BLUE);
-            Console.WriteLine();
-            machine.DebugPrint(Data.BallColor.RED);
-            Console.WriteLine();
-            Console.ReadKey();
+            while (true)
+            {
+                Console.WriteLine("选择你的操作，C:选择不同随机算法，G：生成双色球，Q退出");
+                ConsoleKeyInfo Key = Console.ReadKey();
+                if (Key.Key == ConsoleKey.G)
+                {
+                    machine.Clear();
+                    machine.PickUpBalls();
+                    machine.DebugPrintBalls();
+                }
+                else if (Key.Key == ConsoleKey.Q)
+                {
+                    break;
+                }
+                else if (Key.Key == ConsoleKey.C)
+                {
+                    Console.WriteLine("请选择随机算法：算法1[1]， 算法2[2]");
+                    ConsoleKeyInfo funKey = Console.ReadKey();
+                    if (funKey.Key == ConsoleKey.D1)
+                    {
+                        machine.SetAlgorithm(MathTools.PickMethod1);
+                        Console.WriteLine("已选算法1");
+                    }
+                    else if (funKey.Key == ConsoleKey.D2)
+                    {
+                        machine.SetAlgorithm(MathTools.PickMethod2);
+                        Console.WriteLine("已选算法2");
+                    }
+                    else
+                    { 
+                        Console.WriteLine("请输入正确的数字");
+                    }
+                }
+            }
         }
     }
 }

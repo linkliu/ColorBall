@@ -8,6 +8,10 @@ namespace ColorBall.Mod
     {
         protected List<Ball> blueList = new List<Ball>();
         protected List<Ball> redList = new List<Ball>();
+        protected List<Ball> pickedBlueBalls = new List<Ball>();
+        protected List<Ball> pickedRedBalls = new List<Ball>();
+        public delegate List<int> pickAlgorithmFun(int starNum, int endNum, int needCount);
+        protected pickAlgorithmFun pickFun = MathTools.PickMethod1;
 
         public void InitBalls()
         {
@@ -17,10 +21,21 @@ namespace ColorBall.Mod
             redList = generateBalls(1, GlobalConfig.RedBallCapacity, BallColor.RED);
         }
 
-        public void Shuffle()
+        public void SetAlgorithm(pickAlgorithmFun func)
         {
-            blueList = shuffleBalls(blueList);
-            redList = shuffleBalls(redList);
+            pickFun = func;
+        }
+
+        public void PickUpBalls()
+        {
+            pickedBlueBalls = pickUpBalls(blueList, GlobalConfig.BlueNeed);
+            pickedRedBalls = pickUpBalls(redList, GlobalConfig.RedNeed);
+        }
+
+        public void Clear()
+        { 
+            pickedRedBalls.Clear();
+            pickedBlueBalls.Clear();
         }
 
         protected List<Ball> generateBalls(int startNum, int endNum, BallColor color)
@@ -33,29 +48,17 @@ namespace ColorBall.Mod
             return list;
         }
 
-        protected List<Ball> shuffleBalls(List<Ball> ballList)
+        protected List<Ball> pickUpBalls(List<Ball> ballList, int pickNum)
         {
             if (ballList == null || ballList.Count == 0)
             {
                 return new List<Ball>();
             }
-            List<int> posList = new List<int>();
-            List<int> newPosList = new List<int>();
+            List<int> posList = pickFun(0, ballList.Count -1, pickNum);
             List<Ball> newBallList = new List<Ball>();
-            for (int i = 0; i < ballList.Count; i++)
+            for (int i = 0; i < posList.Count; i++)
             {
-                posList.Add(i);
-            }
-            while (posList.Count > 0)
-            { 
-                int pickPos = MathTools.Random(0, posList.Count - 1);
-                newPosList.Add(posList[pickPos]);
-                posList.RemoveAt(pickPos);
-            }
-
-            for (int i = 0; i < newPosList.Count; i++)
-            { 
-                newBallList.Add(ballList[newPosList[i]]);
+                newBallList.Add(ballList[posList[i]]);
             }
             return newBallList;
         }
@@ -68,6 +71,22 @@ namespace ColorBall.Mod
             {
                 Console.Write("{0:d2}{1}", ballList[i].Number, (i < ballList.Count -1 ? ",":""));
             }
+        }
+
+        public void DebugPrintBalls()
+        {
+            Console.WriteLine("RedBalls:");
+            for (int i = 0; i < pickedRedBalls.Count; i++)
+            {
+                Console.Write("{0:d2}{1}", pickedRedBalls[i].Number, (i < pickedRedBalls.Count - 1 ? "," : ""));
+            }
+            Console.WriteLine();
+            Console.WriteLine("BlueBall:");
+            for (int i = 0; i < pickedBlueBalls.Count; i++)
+            {
+                Console.Write("{0:d2}{1}", pickedBlueBalls[i].Number, (i < pickedBlueBalls.Count - 1 ? "," : ""));
+            }
+            Console.WriteLine();
         }
 
 
