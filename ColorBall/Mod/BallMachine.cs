@@ -4,21 +4,40 @@ using ColorBall.Data;
 
 namespace ColorBall.Mod
 {
-    internal class BallMachine
+    public class BallMachine
     {
-        protected List<Ball> blueList = new List<Ball>();
-        protected List<Ball> redList = new List<Ball>();
+        protected List<Ball> blueBallList = new List<Ball>();
+        protected List<Ball> redBallList = new List<Ball>();
         protected List<Ball> pickedBlueBalls = new List<Ball>();
         protected List<Ball> pickedRedBalls = new List<Ball>();
         public delegate List<int> pickAlgorithmFun(int starNum, int endNum, int needCount);
         protected pickAlgorithmFun pickFun = MathTools.PickMethod1;
 
+        public List<Ball> RedList 
+        { 
+            get 
+            { return blueBallList; } 
+        }
+
+        public List<Ball> BlueList
+        {
+            get { return redBallList; }
+        }
+
+        public List<Ball> PickedBlueBalls
+        { 
+           get{ return pickedBlueBalls; }
+        }
+        public List<Ball> PickedRedBalls
+        {
+            get { return pickedRedBalls; }
+        }
         public void InitBalls()
         {
-            blueList.Clear();
-            redList.Clear();
-            blueList = generateBalls(1, GlobalConfig.BlueBallCapacity, BallColor.BLUE);
-            redList = generateBalls(1, GlobalConfig.RedBallCapacity, BallColor.RED);
+            blueBallList.Clear();
+            redBallList.Clear();
+            blueBallList = generateBalls(1, GlobalConfig.BlueBallCapacity, BallColor.BLUE);
+            redBallList = generateBalls(1, GlobalConfig.RedBallCapacity, BallColor.RED);
         }
 
         public void SetAlgorithm(pickAlgorithmFun func)
@@ -28,8 +47,8 @@ namespace ColorBall.Mod
 
         public void PickUpBalls()
         {
-            pickedBlueBalls = pickUpBalls(blueList, GlobalConfig.BlueNeed);
-            pickedRedBalls = pickUpBalls(redList, GlobalConfig.RedNeed);
+            pickedBlueBalls = pickUpBalls(blueBallList, GlobalConfig.BlueNeed);
+            pickedRedBalls = pickUpBalls(redBallList, GlobalConfig.RedNeed);
         }
 
         public void Clear()
@@ -66,7 +85,7 @@ namespace ColorBall.Mod
         public void DebugPrint(BallColor color)
         {
             Console.WriteLine("{0}Ball infor:", color);
-            List<Ball> ballList = color == BallColor.RED ? redList : blueList;
+            List<Ball> ballList = color == BallColor.RED ? redBallList : blueBallList;
             for (int i = 0; i < ballList.Count; i++)
             {
                 Console.Write("{0:d2}{1}", ballList[i].Number, (i < ballList.Count -1 ? ",":""));

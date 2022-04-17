@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ColorBall.Data
+﻿namespace ColorBall.Data
 {
     // 双色球颜色
     public enum BallColor:int
@@ -10,7 +8,7 @@ namespace ColorBall.Data
     }
 
 
-    internal class Ball
+    public class Ball
     {
         private BallColor color;
         private int number;
