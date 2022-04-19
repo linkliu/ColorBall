@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E2EBD249-1A27-4E0D-BA1A-14F6AE537155}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>ColorBall</RootNamespace>
     <AssemblyName>ColorBall</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -68,6 +68,10 @@
     <Compile Include="Data\Ball.cs" />
     <Compile Include="Data\GlobalConfig.cs" />
     <Compile Include="Mod\BallMachine.cs" />
+    <Compile Include="Mod\Common\BaseManager.cs" />
+    <Compile Include="Mod\Common\DataArgs.cs" />
+    <Compile Include="Mod\Common\EventManager.cs" />
+    <Compile Include="Mod\MainFormManager.cs" />
     <Compile Include="Mod\MathTools.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
