@@ -10,8 +10,15 @@ namespace ColorBall.Mod.Common
 	{
 		private Dictionary<string, object> data = new Dictionary<string, object>();
 		public void Set(string key, object value)
-		{ 
-			data.Add(key, value);
+		{
+			if (data.ContainsKey(key))
+			{
+				data[key] = value;
+			}
+			else
+			{ 
+				data.Add(key, value);
+			}
 		}
 
 		public object Get(string key)

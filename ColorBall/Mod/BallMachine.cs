@@ -73,7 +73,7 @@ namespace ColorBall.Mod
 			{
 				return new List<Ball>();
 			}
-			List<int> posList = pickFun(0, ballList.Count -1, pickNum);
+			List<int> posList = pickFun(0, ballList.Count - 1, pickNum);
 			List<Ball> newBallList = new List<Ball>();
 			for (int i = 0; i < posList.Count; i++)
 			{

@@ -7,5 +7,7 @@ namespace ColorBall
 		public static int BlueNeed = 1;
 		public static int RedNeed = 6;
 
+		public static int RandomTimerInterval = 20; //millisecond
+		public static int GenerateTimerInterval = 1000;//millisecond
 	}
 }

@@ -28,22 +28,19 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			this.GenerateButton = new System.Windows.Forms.Button();
 			this.RedBallGroupBox = new System.Windows.Forms.GroupBox();
-			this.BlueBallGroupBox = new System.Windows.Forms.GroupBox();
-			this.Ball1label = new System.Windows.Forms.Label();
-			this.Ball2label = new System.Windows.Forms.Label();
-			this.Ball3label = new System.Windows.Forms.Label();
-			this.Ball5label = new System.Windows.Forms.Label();
-			this.Ball4label = new System.Windows.Forms.Label();
 			this.Ball6label = new System.Windows.Forms.Label();
+			this.Ball4label = new System.Windows.Forms.Label();
+			this.Ball5label = new System.Windows.Forms.Label();
+			this.Ball3label = new System.Windows.Forms.Label();
+			this.Ball2label = new System.Windows.Forms.Label();
+			this.Ball1label = new System.Windows.Forms.Label();
+			this.BlueBallGroupBox = new System.Windows.Forms.GroupBox();
 			this.Ball7label = new System.Windows.Forms.Label();
 			this.ResultLabel = new System.Windows.Forms.Label();
 			this.ResetButton = new System.Windows.Forms.Button();
 			this.ResultRichTextBox = new System.Windows.Forms.RichTextBox();
-			this.RandomTimer = new System.Windows.Forms.Timer(this.components);
-			this.GenerateTimer = new System.Windows.Forms.Timer(this.components);
 			this.RedBallGroupBox.SuspendLayout();
 			this.BlueBallGroupBox.SuspendLayout();
 			this.SuspendLayout();
@@ -73,59 +70,16 @@
 			this.RedBallGroupBox.TabStop = false;
 			this.RedBallGroupBox.Text = "红球";
 			// 
-			// BlueBallGroupBox
+			// Ball6label
 			// 
-			this.BlueBallGroupBox.Controls.Add(this.Ball7label);
-			this.BlueBallGroupBox.Location = new System.Drawing.Point(1221, 12);
-			this.BlueBallGroupBox.Name = "BlueBallGroupBox";
-			this.BlueBallGroupBox.Size = new System.Drawing.Size(274, 183);
-			this.BlueBallGroupBox.TabIndex = 2;
-			this.BlueBallGroupBox.TabStop = false;
-			this.BlueBallGroupBox.Text = "蓝球";
-			// 
-			// Ball1label
-			// 
-			this.Ball1label.AutoSize = true;
-			this.Ball1label.Font = new System.Drawing.Font("SimSun", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.Ball1label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.Ball1label.Location = new System.Drawing.Point(6, 26);
-			this.Ball1label.Name = "Ball1label";
-			this.Ball1label.Size = new System.Drawing.Size(191, 134);
-			this.Ball1label.TabIndex = 0;
-			this.Ball1label.Text = "00";
-			// 
-			// Ball2label
-			// 
-			this.Ball2label.AutoSize = true;
-			this.Ball2label.Font = new System.Drawing.Font("SimSun", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.Ball2label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.Ball2label.Location = new System.Drawing.Point(197, 26);
-			this.Ball2label.Name = "Ball2label";
-			this.Ball2label.Size = new System.Drawing.Size(191, 134);
-			this.Ball2label.TabIndex = 1;
-			this.Ball2label.Text = "00";
-			// 
-			// Ball3label
-			// 
-			this.Ball3label.AutoSize = true;
-			this.Ball3label.Font = new System.Drawing.Font("SimSun", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.Ball3label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.Ball3label.Location = new System.Drawing.Point(388, 26);
-			this.Ball3label.Name = "Ball3label";
-			this.Ball3label.Size = new System.Drawing.Size(191, 134);
-			this.Ball3label.TabIndex = 2;
-			this.Ball3label.Text = "00";
-			// 
-			// Ball5label
-			// 
-			this.Ball5label.AutoSize = true;
-			this.Ball5label.Font = new System.Drawing.Font("SimSun", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.Ball5label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.Ball5label.Location = new System.Drawing.Point(770, 26);
-			this.Ball5label.Name = "Ball5label";
-			this.Ball5label.Size = new System.Drawing.Size(191, 134);
-			this.Ball5label.TabIndex = 3;
-			this.Ball5label.Text = "00";
+			this.Ball6label.AutoSize = true;
+			this.Ball6label.Font = new System.Drawing.Font("SimSun", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.Ball6label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.Ball6label.Location = new System.Drawing.Point(961, 26);
+			this.Ball6label.Name = "Ball6label";
+			this.Ball6label.Size = new System.Drawing.Size(191, 134);
+			this.Ball6label.TabIndex = 5;
+			this.Ball6label.Text = "00";
 			// 
 			// Ball4label
 			// 
@@ -138,16 +92,59 @@
 			this.Ball4label.TabIndex = 4;
 			this.Ball4label.Text = "00";
 			// 
-			// Ball6label
+			// Ball5label
 			// 
-			this.Ball6label.AutoSize = true;
-			this.Ball6label.Font = new System.Drawing.Font("SimSun", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.Ball6label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.Ball6label.Location = new System.Drawing.Point(961, 26);
-			this.Ball6label.Name = "Ball6label";
-			this.Ball6label.Size = new System.Drawing.Size(191, 134);
-			this.Ball6label.TabIndex = 5;
-			this.Ball6label.Text = "00";
+			this.Ball5label.AutoSize = true;
+			this.Ball5label.Font = new System.Drawing.Font("SimSun", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.Ball5label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.Ball5label.Location = new System.Drawing.Point(770, 26);
+			this.Ball5label.Name = "Ball5label";
+			this.Ball5label.Size = new System.Drawing.Size(191, 134);
+			this.Ball5label.TabIndex = 3;
+			this.Ball5label.Text = "00";
+			// 
+			// Ball3label
+			// 
+			this.Ball3label.AutoSize = true;
+			this.Ball3label.Font = new System.Drawing.Font("SimSun", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.Ball3label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.Ball3label.Location = new System.Drawing.Point(388, 26);
+			this.Ball3label.Name = "Ball3label";
+			this.Ball3label.Size = new System.Drawing.Size(191, 134);
+			this.Ball3label.TabIndex = 2;
+			this.Ball3label.Text = "00";
+			// 
+			// Ball2label
+			// 
+			this.Ball2label.AutoSize = true;
+			this.Ball2label.Font = new System.Drawing.Font("SimSun", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.Ball2label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.Ball2label.Location = new System.Drawing.Point(197, 26);
+			this.Ball2label.Name = "Ball2label";
+			this.Ball2label.Size = new System.Drawing.Size(191, 134);
+			this.Ball2label.TabIndex = 1;
+			this.Ball2label.Text = "00";
+			// 
+			// Ball1label
+			// 
+			this.Ball1label.AutoSize = true;
+			this.Ball1label.Font = new System.Drawing.Font("SimSun", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.Ball1label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.Ball1label.Location = new System.Drawing.Point(6, 26);
+			this.Ball1label.Name = "Ball1label";
+			this.Ball1label.Size = new System.Drawing.Size(191, 134);
+			this.Ball1label.TabIndex = 0;
+			this.Ball1label.Text = "00";
+			// 
+			// BlueBallGroupBox
+			// 
+			this.BlueBallGroupBox.Controls.Add(this.Ball7label);
+			this.BlueBallGroupBox.Location = new System.Drawing.Point(1221, 12);
+			this.BlueBallGroupBox.Name = "BlueBallGroupBox";
+			this.BlueBallGroupBox.Size = new System.Drawing.Size(274, 183);
+			this.BlueBallGroupBox.TabIndex = 2;
+			this.BlueBallGroupBox.TabStop = false;
+			this.BlueBallGroupBox.Text = "蓝球";
 			// 
 			// Ball7label
 			// 
@@ -190,16 +187,6 @@
 			this.ResultRichTextBox.TabIndex = 6;
 			this.ResultRichTextBox.Text = "00,00,00,00,00,00,00";
 			// 
-			// RandomTimer
-			// 
-			this.RandomTimer.Interval = 20;
-			this.RandomTimer.Tick += new System.EventHandler(this.RandomTimer_Tick);
-			// 
-			// GenerateTimer
-			// 
-			this.GenerateTimer.Interval = 1000;
-			this.GenerateTimer.Tick += new System.EventHandler(this.GenerateTimer_Tick);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -237,7 +224,5 @@
 		private System.Windows.Forms.Label ResultLabel;
 		private System.Windows.Forms.Button ResetButton;
 		private System.Windows.Forms.RichTextBox ResultRichTextBox;
-		protected System.Windows.Forms.Timer RandomTimer;
-		private System.Windows.Forms.Timer GenerateTimer;
 	}
 }
