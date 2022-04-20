@@ -21,6 +21,18 @@ namespace ColorBall.Mod
 			Console.WriteLine("MainFormManager constract!");
 		}
 
+		public void SetSynchronizingObject(System.Windows.Forms.Form form)
+		{
+			if (randomTimer != null)
+			{ 
+				randomTimer.SynchronizingObject = form;
+			}
+			if (generateTimer != null)
+			{ 
+				generateTimer.SynchronizingObject = form;
+			}
+		}
+
 		public override void OnInitData()
 		{
             ballMachine = new BallMachine();

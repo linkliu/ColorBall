@@ -56,6 +56,7 @@ namespace ColorBall.View
 		private void GenerateButton_Click(object sender, EventArgs e)
 		{
 			EventManager.Instance.EventFire(CommonEvent.ON_GENERATE_BALL_EVENT, null);
+			ResetUI();
 		}
 		private void ResetButton_Click(object sender, EventArgs e)
 		{

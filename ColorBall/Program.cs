@@ -14,7 +14,9 @@ namespace ColorBall
 			MainFormManager mainFormManager = new MainFormManager();
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm());
+			MainForm mainForm = new MainForm();
+			mainFormManager.SetSynchronizingObject(mainForm);
+			Application.Run(mainForm);
 		}
 	}
 }
