@@ -32,6 +32,7 @@ namespace ColorBall.Mod
 		{
 			get { return pickedRedBalls; }
 		}
+
 		public void InitBalls()
 		{
 			blueBallList.Clear();
@@ -79,7 +80,24 @@ namespace ColorBall.Mod
 			{
 				newBallList.Add(ballList[posList[i]]);
 			}
+			newBallList.Sort(BallSort);
 			return newBallList;
+		}
+
+		public int BallSort(Ball ballA, Ball ballB)
+		{
+			if (ballA < ballB)
+			{
+				return -1;
+			}
+			else if (ballA == ballB)
+			{
+				return 0;
+			}
+			else
+			{
+				return 1;
+			}
 		}
 
 		public void DebugPrint(BallColor color)

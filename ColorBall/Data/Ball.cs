@@ -28,5 +28,24 @@
 			get {return color; }
 			set {color = value; }
 		}
+
+		public static bool operator < (Ball ballA, Ball ballB)
+		{
+			return ballA.Number < ballB.Number;
+		}
+		public static bool operator > (Ball ballA, Ball ballB)
+		{
+			return ballA.Number < ballB.Number;
+		}
+		
+		public static bool operator == (Ball ballA, Ball ballB)
+		{
+			return ballA.Number == ballB.Number;
+		}
+		
+		public static bool operator != (Ball ballA, Ball ballB)
+		{
+			return ballA.Number != ballB.Number;
+		}
 	}
 }
